@@ -9,7 +9,7 @@ runs:
   steps:
     - id: quality-gate-check
       run: $GITHUB_ACTION_PATH/script/check-quality-gate.sh ${{ inputs.scanMetadataReportFile  }}
-      shell: bash
+      shell: bash --noprofile --norc -e -x -o pipefail {0}
 inputs:
   scanMetadataReportFile:
     description: Location of the scanner metadata report file
